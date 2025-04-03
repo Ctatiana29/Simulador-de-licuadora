@@ -1,9 +1,9 @@
 /*funcionamiento de la licuadora*/
 
-var estadoLicuadora="apagado";
-var sonidoLicuadora= document.getElementById("blender-sound");
-var botonLicuadora= document.getElementById("blender-button-sound");
-var licuadora=document.getElementByI("blender");
+var estadoLicuadora = "apagado";
+var sonidoLicuadora = document.getElementById( "blender-sound" );
+var botonLicuadora = document.getElementById( "blender-button-sound" );
+var licuadora = document.getElementById("blender");
 
 function controlarLicuadora(){
     if (estadoLicuadora=="apagado"){
@@ -19,11 +19,11 @@ function controlarLicuadora(){
 
 function hacerBrrBrr(){
     if(sonidoLicuadora.paused){
-        botonLicuadora.onplay();
-        sonidoLicuadora.onplay();
+        botonLicuadora.play();
+        sonidoLicuadora.play();
     }else{
-        botonLicuadora.onplay();
-        sonidoLicuadora.onplay();
+        botonLicuadora.play();
+        sonidoLicuadora.paused();
         sonidoLicuadora.currentTime=0;
     }
 }
