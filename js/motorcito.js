@@ -5,25 +5,27 @@ var sonidoLicuadora = document.getElementById( "blender-sound" );
 var botonLicuadora = document.getElementById( "blender-button-sound" );
 var licuadora = document.getElementById("blender");
 
-function controlarLicuadora(){
-    if (estadoLicuadora=="apagado"){
-        estadoLicuadora="encendido";
-        hacerBrrBrr();
-        licuadora.classlist.add("active");
-    }else{
-        estadoLicuadora="apagado";
-        hacerBrrBrr();
-        licuadora.classlist.remove("active");
+function controlarLicuadora() {
+    if ( estadoLicuadora == "apagado" ) {
+      estadoLicuadora = "encendido";
+      hacerBrrBrr();
+      licuadora.classList.add("active");
+      /* document.getElementById( "blender-button" ).style.backgroundColor = "green"; */
+    } else {
+      estadoLicuadora = "apagado";
+      hacerBrrBrr();
+      licuadora.classList.remove("active");
+      /* document.getElementById( "blender-button" ).style.backgroundColor = "red"; */
     }
-}
+  }
 
-function hacerBrrBrr(){
-    if(sonidoLicuadora.paused){
+  function hacerBrrBrr() {
+    if( sonidoLicuadora.paused ){
         botonLicuadora.play();
         sonidoLicuadora.play();
-    }else{
+      } else {
         botonLicuadora.play();
-        sonidoLicuadora.paused();
-        sonidoLicuadora.currentTime=0;
+        sonidoLicuadora.pause();
+        sonidoLicuadora.currentTime = 0; /* Reinicia el audio al segundo 0 */
+      }
     }
-}
